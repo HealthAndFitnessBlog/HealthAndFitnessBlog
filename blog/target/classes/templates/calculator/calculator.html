@@ -4,8 +4,8 @@
         <div class="container body-content span=8 offset=2">
 
             <div class="form-group">
-                <label class="col-sm-4 control panel">Gender</label>
-                <div class="col-sm-4">
+                <label class="col-sm-2 control panel">Gender</label>
+                <div class="col-sm-2">
                     <input type="radio" value="M" name="Gender" /> Male
                     <input type="radio" value="F" name="Gender" /> Female
                 </div>
@@ -13,8 +13,8 @@
 
 
             <div class="form-group">
-                <label class="col-sm-4 control panel">Age</label>
-                <div class="col-sm-4">
+                <label class="col-sm-2 control panel">Age</label>
+                <div class="col-sm-2">
                     <input type="text" class="form-control" id="Age" placeholder="Age"
                            name="Age" th:value="${Age}"/>
                 </div>
@@ -22,8 +22,8 @@
 
 
             <div class="form-group">
-                <label class="col-sm-4 control panel">Weight</label>
-                <div class="col-sm-4">
+                <label class="col-sm-2 control panel">Weight</label>
+                <div class="col-sm-2">
                     <input type="text" class="form-control" id="Weight" placeholder="Weight"
                            name="Weight" th:value="${Weight}"/>
                 </div>
@@ -31,16 +31,16 @@
 
 
             <div class="form-group">
-                <label class="col-sm-4 control panel">Height</label>
-                <div class="col-sm-4">
+                <label class="col-sm-2 control panel">Height</label>
+                <div class="col-sm-2">
                     <input type="text" class="form-control" id="Height" placeholder="Height"
                            name="Height" th:value="${Height}"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-sm-4 control panel">Activity</label>
-                <div class="col-sm-4">
+                <label class="col-sm-2 control panel">Activity</label>
+                <div class="col-sm-3">
                     <select class="form-control" name="Activity">
                         <option value="1" th:selected="${Activity.equals('1')}">Basal Metabolic Rate (BMR)</option>
                         <option value="1.2" th:selected="${Activity.equals('1.2')}">Secondary - little to no exercise</option>
@@ -53,8 +53,8 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-4 control panel">Your daily calorie needs are:</label>
-                <div class="col-sm-4">
+                <label class="col-sm-2 control panel">Your daily calorie need is:</label>
+                <div class="col-sm-2">
                     <input type="text" class="form-control" id="calories" placeholder="Calories"
                            name="calories" th:value="${calories}"/>
                 </div>

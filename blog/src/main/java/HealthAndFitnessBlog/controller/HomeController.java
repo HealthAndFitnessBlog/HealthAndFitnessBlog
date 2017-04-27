@@ -21,7 +21,7 @@ public class HomeController {
         List<Article> articles = this.articleRepository.findAll();
 
         model.addAttribute("view", "home/index");
-        model.addAttribute("asd", articles);
+        model.addAttribute("article", articles);
 
         return "base-layout";
 
