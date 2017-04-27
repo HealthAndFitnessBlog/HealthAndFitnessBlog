@@ -1,0 +1,70 @@
+<form class="form-horizontal" th:action="@{/calculator}" method="POST">
+    <fieldset>
+
+        <div class="container body-content span=8 offset=2">
+
+            <div class="form-group">
+                <label class="col-sm-4 control panel">Gender</label>
+                <div class="col-sm-4">
+                        <input type="radio" value="M" name="Gender" th:selected="${M}"/>Male
+                        <input type="radio" value="F" name="Gender" th:selected="${F}"/>Female
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-4 control panel">Age</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Age" placeholder="Age"
+                           name="Age" th:value="${Age}"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control panel">Weight</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Weight" placeholder="Weight"
+                           name="Weight" th:value="${Weight}"/>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-4 control panel">Height</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Height" placeholder="Height"
+                           name="Height" th:value="${Height}"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-4 control panel">Activity</label>
+                <div class="col-sm-4">
+                    <select class="form-control" name="Activity">
+                        <option value="1" th:selected="${Activity.equals('1')}">Basal Metabolic Rate (BMR)</option>
+                        <option value="1.2" th:selected="${Activity.equals('1.2')}">Secondary - little to no exercise</option>
+                        <option value="1.375" th:selected="${Activity.equals('1,375')}">Lightly Active - exercise/sports 1-3 times/week</option>
+                        <option value="1.55" th:selected="${Activity.equals('1.55')}">Moderatetely Active - exercise/sports 3-5 times/week</option>
+                        <option value="1.725" th:selected="${Activity.equals('1.725')}">Very Active - hard exercise/sports 6-7 times/week</option>
+                        <option value="1.9" th:selected="${Activity.equals('1.95')}">Extra Active - very hard exercise/sports or physical job</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="container body-content span=8 offset=2 ">
+                    <input type="text" class="form-control" id="calories" placeholder="Calories"
+                           name="calories" th:value="${calories}"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+
+    </fieldset>
+
+</form>
+
+
