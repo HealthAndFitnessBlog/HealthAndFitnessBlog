@@ -13,12 +13,15 @@ public class Article {
 
     private User author;
 
+    private Category category;
+
     public Article() { }
 
-    public Article(String title, String content, User author) {
+    public Article(String title, String content, User author, Category category) {
         this.title = title;
         this.content = content;
         this.author = author;
+        this.category = category;
     }
 
 
@@ -65,4 +68,11 @@ public class Article {
         return this.getContent().substring(0, this.getContent().length() / 2) + "...";
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

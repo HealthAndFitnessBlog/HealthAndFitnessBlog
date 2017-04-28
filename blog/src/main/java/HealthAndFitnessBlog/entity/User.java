@@ -21,7 +21,7 @@ public class User {
 
     private Set<Article> articles;
 
-    private Set<Nutrition> nutritions;
+
 
 
     public User(String email, String fullName, String password) {
@@ -31,7 +31,7 @@ public class User {
 
         this.roles = new HashSet<>();
         this.articles = new HashSet<>();
-        this.nutritions = new HashSet<>();
+
 
     }
 
@@ -97,14 +97,6 @@ public class User {
         this.articles = articles;
     }
 
-    @OneToMany(mappedBy = "author")
-    public Set<Nutrition> getNutritions() {
-        return nutritions;
-    }
-
-    public void setNutritions(Set<Nutrition> nutritions) {
-        this.nutritions = nutritions;
-    }
 
 
     @Transient

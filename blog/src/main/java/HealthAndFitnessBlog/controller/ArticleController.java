@@ -3,6 +3,7 @@ package HealthAndFitnessBlog.controller;
 
 import HealthAndFitnessBlog.bindingModel.ArticleBindingModel;
 import HealthAndFitnessBlog.entity.Article;
+import HealthAndFitnessBlog.entity.Category;
 import HealthAndFitnessBlog.entity.User;
 import HealthAndFitnessBlog.repository.ArticleRepository;
 import HealthAndFitnessBlog.repository.UserRepository;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -31,8 +33,12 @@ public class ArticleController {
 
     @GetMapping("/article/create/{category}")
     @PreAuthorize("isAuthenticated()")
-    public String create(Model model,@PathVariable("category") String category ) {
+    public String create(Model model,@PathVariable("category") String category) {
         model.addAttribute("view", "article/create");
+
+        int categoryId = Category.valueOf(category.toUpperCase()).ordinal();
+        model.addAttribute("categoryId", categoryId);
+
 
         return "base-layout";
     }
@@ -45,13 +51,14 @@ public class ArticleController {
 
         User userEntity = this.userRepository.findByEmail(user.getUsername());
 
-        Article article = new Article(
+        Category category = Category.values()[articleBindingModel.getCategoryId()];
 
+        Article article = new Article(
                 articleBindingModel.getTitle(),
                 articleBindingModel.getContent(),
-                userEntity
+                userEntity,
+                category
         );
-
 
         this.articleRepository.saveAndFlush(article);
 
@@ -176,6 +183,9 @@ public class ArticleController {
 
         return userEntity.isAdmin() || userEntity.isAuthor(article);
     }
+
+
+
 
 
 }

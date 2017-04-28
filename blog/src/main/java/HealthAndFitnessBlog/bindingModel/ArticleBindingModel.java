@@ -1,5 +1,7 @@
 package HealthAndFitnessBlog.bindingModel;
 
+import HealthAndFitnessBlog.entity.Category;
+
 import javax.validation.constraints.NotNull;
 
 public class ArticleBindingModel {
@@ -9,6 +11,8 @@ public class ArticleBindingModel {
 
     @NotNull
     private String content;
+
+    private int categoryId;
 
     public String getTitle() {
         return title;
@@ -24,5 +28,13 @@ public class ArticleBindingModel {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }
