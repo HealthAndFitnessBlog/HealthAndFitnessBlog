@@ -2,6 +2,7 @@ package HealthAndFitnessBlog.bindingModel;
 
 import HealthAndFitnessBlog.entity.Category;
 
+import javax.swing.*;
 import javax.validation.constraints.NotNull;
 
 public class ArticleBindingModel {
@@ -37,4 +38,8 @@ public class ArticleBindingModel {
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
+
+
+
+
 }

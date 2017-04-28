@@ -75,4 +75,6 @@ public class Article {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+
 }

@@ -14,7 +14,7 @@ import javax.print.attribute.IntegerSyntax;
 public class CalculatorController {
     @GetMapping("/calculator")
     public String index(Model model) {
-        model.addAttribute("Gender", "1");
+
         model.addAttribute("Activity", "1");
         model.addAttribute("view", "calculator/calculator");
         return "base-layout";

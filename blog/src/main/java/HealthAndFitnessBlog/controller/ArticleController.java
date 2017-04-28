@@ -58,6 +58,7 @@ public class ArticleController {
                 articleBindingModel.getContent(),
                 userEntity,
                 category
+
         );
 
         this.articleRepository.saveAndFlush(article);
